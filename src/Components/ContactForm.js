@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import emailjs from 'emailjs-com';
-import dotenv from 'dotenv';
-dotenv.config();
 
 
 emailjs.init('PjQa-I7WHUNVQp8jU'); 
@@ -12,8 +10,9 @@ const ContactForm = ({ isOpen, onClose }) => {
   
     const sendEmail = (event) => {
       event.preventDefault();
+      console.log("hello world");
   
-      emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, event.target)
+      emailjs.sendForm("service_mgffp6t", 'template_fbrvsgv', event.target)
         .then((result) => {
           console.log(result.text);
         }, (error) => {
@@ -31,7 +30,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div className="flex-grow"></div> 
           
           <div className="flex justify-between w-full">
-            <button onClick={onClose} className="text-left">Close</button>
+            <button type="button" onClick={onClose} className="text-left">Close</button>
             <div className="flex space-x-2">
               <a href='your-linkedin-url' target='_blank' rel='noopener noreferrer' className="text-lg">
                 <FontAwesomeIcon icon={faLinkedin} />
@@ -42,7 +41,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             </div>
           </div>
   
-          <button className="bg-gray-500 text-white active:bg-grey-800 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg hover:bg-gray-700 outline-none focus:outline-none mr-1 mb-1 mt-4" type="submit" onClick={onClose}> Send Message </button>
+          <button className="bg-gray-500 text-white active:bg-grey-800 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg hover:bg-gray-700 outline-none focus:outline-none mr-1 mb-1 mt-4" type="submit"> Send Message </button>
         </form>
       </div>
     );

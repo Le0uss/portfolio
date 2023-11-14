@@ -32,10 +32,10 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div className="flex justify-between w-full">
             <button type="button" onClick={onClose} className="text-left">Close</button>
             <div className="flex space-x-2">
-              <a href='your-linkedin-url' target='_blank' rel='noopener noreferrer' className="text-lg">
+              <a href='https://www.linkedin.com/in/ossama-tenessi-00a90a29b/' target='_blank' rel='noopener noreferrer' className="text-lg">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              <a href='your-github-url' target='_blank' rel='noopener noreferrer' className="text-lg">
+              <a href='https://github.com/Le0uss' target='_blank' rel='noopener noreferrer' className="text-lg">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
